@@ -3,15 +3,16 @@ package boostcron
 import (
 	"github.com/lowl11/boostcron/internal/schedulers/cron_scheduler"
 	"github.com/lowl11/boostcron/internal/schedulers/every_scheduler"
+	"github.com/lowl11/boostcron/pkg/interfaces"
 	"github.com/lowl11/boostcron/pkg/runner"
 	"time"
 )
 
-func (cron *Cron) Every(every int) *every_scheduler.Scheduler {
+func (cron *Cron) Every(every int) interfaces.EveryScheduler {
 	return every_scheduler.New(cron.schedulersChannel, every)
 }
 
-func (cron *Cron) Cron(cronExpression string) *cron_scheduler.Scheduler {
+func (cron *Cron) Cron(cronExpression string) interfaces.CronScheduler {
 	return cron_scheduler.New(cron.schedulersChannel, cronExpression)
 }
 

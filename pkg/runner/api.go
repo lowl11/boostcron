@@ -21,7 +21,6 @@ func (runner *Runner) StartTicker() {
 		runner.runAction()
 		ticker.Reset(runner.scheduler.GetDuration())
 	}
-
 }
 
 func (runner *Runner) runAction() {

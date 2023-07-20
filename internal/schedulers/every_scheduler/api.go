@@ -1,26 +1,27 @@
 package every_scheduler
 
 import (
+	"github.com/lowl11/boostcron/pkg/interfaces"
 	"github.com/lowl11/boostcron/pkg/types"
 	"time"
 )
 
-func (scheduler *Scheduler) Milliseconds() *Scheduler {
+func (scheduler *Scheduler) Milliseconds() interfaces.EveryScheduler {
 	scheduler.duration = time.Millisecond
 	return scheduler
 }
 
-func (scheduler *Scheduler) Seconds() *Scheduler {
+func (scheduler *Scheduler) Seconds() interfaces.EveryScheduler {
 	scheduler.duration = time.Second
 	return scheduler
 }
 
-func (scheduler *Scheduler) Minutes() *Scheduler {
+func (scheduler *Scheduler) Minutes() interfaces.EveryScheduler {
 	scheduler.duration = time.Minute
 	return scheduler
 }
 
-func (scheduler *Scheduler) Hours() *Scheduler {
+func (scheduler *Scheduler) Hours() interfaces.EveryScheduler {
 	scheduler.duration = time.Hour
 	return scheduler
 }
