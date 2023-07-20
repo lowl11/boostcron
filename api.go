@@ -30,3 +30,7 @@ func (cron *Cron) Run() {
 	infinite := make(chan bool, 1)
 	<-infinite
 }
+
+func (cron *Cron) RunAsync() {
+	go cron.Run()
+}
