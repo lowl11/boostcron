@@ -1,8 +1,9 @@
 package runner
 
 import (
+	"github.com/lowl11/boostcron/internal/logger"
+	"github.com/lowl11/boostcron/internal/panicer"
 	"github.com/lowl11/boostcron/pkg/types"
-	"github.com/lowl11/lazylog/log"
 	"time"
 )
 
@@ -24,15 +25,21 @@ func (runner *Runner) StartTicker() {
 }
 
 func (runner *Runner) runAction() {
+	defer func() {
+		if err := recover(); err != nil {
+			logger.Error(panicer.Handle(err), "PANIC RECOVERED")
+		}
+	}()
+
 	jobAction := runner.scheduler.Action()
 
 	if err := jobAction(); err != nil {
 		if runner.errorHandler != nil {
 			if innerError := runner.errorHandler(err); innerError != nil {
-				log.Error(innerError, "Cron error handler error")
+				logger.Error(innerError, "Cron error handler error")
 			}
 		}
 
-		log.Error(err, "Execute job action error")
+		logger.Error(err, "Execute job action error")
 	}
 }

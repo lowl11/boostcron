@@ -2,5 +2,5 @@ github.com/aptible/supercronic v0.2.25 h1:l3wJzLNicivvumVPWEM5/B75o1Pi9e5KMtrZR9
 github.com/aptible/supercronic v0.2.25/go.mod h1:mrrR6YgUiOvR8zPyLl8zPcHcHmuNN5kht7W7pD/gVrQ=
 github.com/lowl11/lazyfile v0.1.1 h1:RWx1rJug0zLVipBdxarJlowMQSy+mTiiU2S5TROAeK4=
 github.com/lowl11/lazyfile v0.1.1/go.mod h1:qcGLmys85GL2O9Rr2Gk/I6JieY0CBifeMsGUWHtMNNg=
-github.com/lowl11/lazylog v1.2.8 h1:CEMvtNn+GQtEpMZrQGfMoLCrH0ppkuRg2P9lNvZB9Oo=
-github.com/lowl11/lazylog v1.2.8/go.mod h1:0OYngd1IPL84aTTk/St26qARhayVpJtUmh5H+9MQ3Ic=
+github.com/lowl11/lazylog v1.2.9 h1:Z74wS2eI7b9zi9dr6I4JzA/LiEChUvSsXO+8vgSiFF8=
+github.com/lowl11/lazylog v1.2.9/go.mod h1:0OYngd1IPL84aTTk/St26qARhayVpJtUmh5H+9MQ3Ic=
