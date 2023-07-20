@@ -30,6 +30,10 @@ func New(config Config) *Cron {
 	return cron
 }
 
+type (
+	CronRouter = interfaces.CronRouter
+)
+
 func (cron *Cron) addScheduler(scheduler interfaces.Scheduler) {
 	cron.mutex.Lock()
 	defer cron.mutex.Unlock()
