@@ -14,7 +14,10 @@ func (runner *Runner) ErrorHandler(handler types.ErrorHandler) *Runner {
 
 func (runner *Runner) StartTicker() {
 	if runner.fromStart {
-		runner.runAction()
+		go func() {
+			time.Sleep(time.Millisecond * 500)
+			runner.runAction()
+		}()
 	}
 
 	for {
