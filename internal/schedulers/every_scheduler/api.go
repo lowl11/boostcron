@@ -26,6 +26,16 @@ func (scheduler *Scheduler) Hours() interfaces.EveryScheduler {
 	return scheduler
 }
 
+func (scheduler *Scheduler) Days() interfaces.EveryScheduler {
+	scheduler.duration = time.Hour * 24
+	return scheduler
+}
+
+func (scheduler *Scheduler) Weeks() interfaces.EveryScheduler {
+	scheduler.duration = time.Hour * 24 * 7
+	return scheduler
+}
+
 func (scheduler *Scheduler) Do(jobAction types.CronHandler) {
 	scheduler.jobAction = jobAction
 	scheduler.schedulersChannel <- scheduler

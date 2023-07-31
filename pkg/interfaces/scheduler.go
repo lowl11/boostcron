@@ -21,6 +21,8 @@ type EveryScheduler interface {
 	Seconds() EveryScheduler
 	Minutes() EveryScheduler
 	Hours() EveryScheduler
+	Days() EveryScheduler
+	Weeks() EveryScheduler
 }
 
 type CronScheduler interface {
