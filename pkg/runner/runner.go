@@ -8,6 +8,7 @@ import (
 type Runner struct {
 	scheduler    interfaces.Scheduler
 	errorHandler types.ErrorHandler
+	fromStart    bool
 }
 
 func New(scheduler interfaces.Scheduler) *Runner {

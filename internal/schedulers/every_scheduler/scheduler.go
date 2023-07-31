@@ -9,6 +9,7 @@ import (
 type Scheduler struct {
 	schedulersChannel chan interfaces.Scheduler
 	every             int
+	fromStart         bool
 
 	duration time.Duration
 

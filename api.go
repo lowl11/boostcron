@@ -25,6 +25,7 @@ func (cron *Cron) Run() {
 		go runner.
 			New(scheduler).
 			ErrorHandler(cron.errorHandler).
+			FromStart(scheduler.GetStart()).
 			StartTicker()
 	}
 

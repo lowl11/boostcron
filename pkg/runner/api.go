@@ -13,6 +13,10 @@ func (runner *Runner) ErrorHandler(handler types.ErrorHandler) *Runner {
 }
 
 func (runner *Runner) StartTicker() {
+	if runner.fromStart {
+		runner.runAction()
+	}
+
 	for {
 		ticker := time.NewTicker(runner.scheduler.GetDuration())
 
@@ -21,6 +25,11 @@ func (runner *Runner) StartTicker() {
 		runner.runAction()
 		ticker.Reset(runner.scheduler.GetDuration())
 	}
+}
+
+func (runner *Runner) FromStart(fromStart bool) *Runner {
+	runner.fromStart = fromStart
+	return runner
 }
 
 func (runner *Runner) runAction() {

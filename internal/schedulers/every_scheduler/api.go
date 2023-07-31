@@ -36,6 +36,15 @@ func (scheduler *Scheduler) Weeks() interfaces.EveryScheduler {
 	return scheduler
 }
 
+func (scheduler *Scheduler) FromStart() interfaces.EveryScheduler {
+	scheduler.fromStart = true
+	return scheduler
+}
+
+func (scheduler *Scheduler) GetStart() bool {
+	return scheduler.fromStart
+}
+
 func (scheduler *Scheduler) Do(jobAction types.CronHandler) {
 	scheduler.jobAction = jobAction
 	scheduler.schedulersChannel <- scheduler

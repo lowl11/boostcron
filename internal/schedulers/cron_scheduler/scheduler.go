@@ -8,6 +8,7 @@ import (
 type Scheduler struct {
 	schedulersChannel chan interfaces.Scheduler
 	cronExpression    string
+	fromStart         bool
 
 	jobAction types.CronHandler
 }

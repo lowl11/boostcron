@@ -8,6 +8,7 @@ import (
 type Scheduler interface {
 	Action() types.CronHandler
 	GetDuration() time.Duration
+	GetStart() bool
 }
 
 type BaseScheduler interface {
@@ -23,6 +24,7 @@ type EveryScheduler interface {
 	Hours() EveryScheduler
 	Days() EveryScheduler
 	Weeks() EveryScheduler
+	FromStart() EveryScheduler
 }
 
 type CronScheduler interface {
